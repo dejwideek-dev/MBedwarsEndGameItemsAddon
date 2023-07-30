@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group 'pl.dejwideek'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven {url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'}
+    maven {url = 'https://repo.marcely.de/repository/maven-public/'}
+    maven {url = 'https://repo.aikar.co/content/groups/aikar/'}
+}
+
+dependencies {
+    shadow localGroovy()
+    shadow gradleApi()
+    compileOnly 'org.spigotmc:spigot-api:1.20-R0.1-SNAPSHOT'
+    compileOnly 'de.marcely.bedwars:API:5.1.1'
+    implementation 'dev.dejvokep:boosted-yaml-spigot:1.3'
+    implementation 'co.aikar:acf-paper:0.5.1-SNAPSHOT'
+    implementation 'org.apache.commons:commons-lang3:3.0'
+    implementation 'com.github.cryptomorin:XSeries:9.4.0'
+}
+
+shadowJar {
+    relocate 'dev.dejvokep.boostedyaml', 'pl.dejwideek.egiaddon.libs.boostedyaml'
+    relocate 'co.aikar.commands', 'pl.dejwideek.egiaddon.libs.acf-commands'
+    relocate 'co.aikar.locales', 'pl.dejwideek.egiaddon.libs.acf-locales'
+    relocate 'org.apache.commons.lang3', 'pl.dejwideek.egiaddon.libs.apache-commons-lang3'
+    relocate 'org.jetbrains.annotations', 'pl.dejwideek.egiaddon.libs.jetbrains-annotations'
+    relocate 'org.intellij.lang.annotations', 'pl.dejwideek.egiaddon.libs.intellij-annotations'
+    relocate 'com.cryptomorin.xseries', 'pl.dejwideek.egiaddon.libs.xseries'
+}
+
+
+build.dependsOn shadowJar

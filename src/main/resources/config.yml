@@ -1,0 +1,51 @@
+#End Game Items Addon for MBedwars by dejwideek
+
+#Set this to true when you setup your items!!!
+#This option prevents errors in console.
+enabled: false
+
+permissions:
+  reload: "bw.endgameitems.reload"
+
+#RGB colors are supported. (1.16+ only)
+messages:
+  #Available placeholder: <permission>
+  no-permission: "&cYou must have permission &4<permission> &cto do this!"
+
+  reloaded: "&eSuccessfully reloaded configuration file!"
+
+#RGB colors are supported. (1.16+ only)
+#Remove [] and paste your items in new lines
+#by template explained below.
+#
+#  play-again:
+#    material: paper
+#    material-data: 0
+#    amount: 1
+#    displayname: "&bPlay Again &7(Right Click)"
+#    lore:
+#      - "&7Right click for next game."
+#    slot: 2
+#    use-handler: true
+#    use-commands: false
+#    #Spectator item handler
+#    handler: "bedwars:next_round"
+#    #Placeholder: <player>
+#    commands:
+#      - "say <player>"
+#  leave:
+#    material: red_bed
+#    material-data: 0
+#    amount: 1
+#    displayname: "&cLeave &7(Right Click)"
+#    lore:
+#      - "&7Right click if you want leave."
+#    slot: 6
+#    use-handler: true
+#    use-commands: false
+#    #Spectator item handler
+#    handler: "bedwars:leave"
+#    #Placeholder: <player>
+#    commands:
+#      - "say <player>"
+items: []
