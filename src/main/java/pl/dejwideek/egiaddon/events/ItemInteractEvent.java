@@ -5,6 +5,7 @@ import de.marcely.bedwars.api.BedwarsAPI;
 import de.marcely.bedwars.api.GameAPI;
 import de.marcely.bedwars.api.arena.Arena;
 import de.marcely.bedwars.api.arena.ArenaStatus;
+import de.marcely.bedwars.api.event.player.SpectatorItemUseEvent;
 import dev.dejvokep.boostedyaml.YamlDocument;
 import dev.dejvokep.boostedyaml.block.implementation.Section;
 import org.bukkit.Bukkit;
@@ -79,5 +80,11 @@ public class ItemInteractEvent implements Listener {
             }
             return;
         });
+    }
+
+    @EventHandler
+    public void onSpectatorItemUse(SpectatorItemUseEvent e) {
+        if(plugin.config.getBoolean("enabled"))
+            e.setCancelled(true);
     }
 }
