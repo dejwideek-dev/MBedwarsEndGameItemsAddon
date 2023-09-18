@@ -81,10 +81,4 @@ public class ItemInteractEvent implements Listener {
             return;
         });
     }
-
-    @EventHandler
-    public void onSpectatorItemUse(SpectatorItemUseEvent e) {
-        if(plugin.config.getBoolean("enabled"))
-            e.setCancelled(true);
-    }
 }
